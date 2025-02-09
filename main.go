@@ -33,7 +33,7 @@ func GetUpdates(offfset int) ([]Update, error) {
 		return nil, err
 	}
 	defer resp.Body.Close()
-	body, _ := ioutil.ReadAll(resp.Body)
+	body, _ := io.ReadAll(resp.Body)
 	var result struct {
 		Result []Update `json:"result"`
 	}
